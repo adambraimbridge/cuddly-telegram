@@ -40,8 +40,8 @@ module.exports.getData = async () => {
 	const $ = await getDOM('https://developer.mozilla.org/en-US/docs/Web/JavaScript')
 	const pages = getPages($, '#quick-links a')
 	const data = Object.assign({}, pages)
-	for (let i in pages) {
-		const $ = await getDOM(`https://developer.mozilla.org${pages[i].href}`)
+	for (let page of Object.values(pages)) {
+		const $ = await getDOM(`https://developer.mozilla.org${page.href}`)
 		Object.assign(data, getPages($, '#quick-links [data-default-state = "open"] a'))
 	}
 	return unflatten(data, { delimiter: '/' })
