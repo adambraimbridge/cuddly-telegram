@@ -13,7 +13,8 @@
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.3",
 		"flat": "^4.1.0",
-		"node-fetch": "^2.6.0"
+		"node-fetch": "^2.6.0",
+		"snapsvg": "^0.5.1"
 	},
 	"devDependencies": {
 		"@adambraimbridge/prettierrc-2019-05": "^1.0.0"
